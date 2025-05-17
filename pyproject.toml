@@ -1,0 +1,29 @@
+[project]
+name = "papercruncher"
+version = "0.1.0"
+description = "Pipeline de síntesis y gestión de papers de inteligencia artificial"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Mariano Luzuriaga", email = "luzuriagamariano@gmail.com" }
+]
+keywords = ["AI", "LLMs", "papers", "pipeline", "research"]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0,<0.116.0",
+    "sqlalchemy>=2.0.41,<3.0.0",
+    "psycopg2-binary>=2.9.10,<3.0.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.7.1"
+]
+
+[project.urls]
+homepage = "https://github.com/mluzu/papercruncher"
+repository = "https://github.com/mluzu/papercruncher"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.2.0"
+pytest-cov = ">=4.1.0"
+flake8 = ">=6.1.0"
+black = ">=24.4.2"
+mypy = ">=1.10.0"
