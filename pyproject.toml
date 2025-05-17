@@ -1,0 +1,27 @@
+[project]
+name = "papercruncher"
+version = "0.1.0"
+description = "Pipeline de síntesis de papers de IA"
+authors = [
+    {name = "Mariano Luzuriaga",email = "luzuriagamariano@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi (>=0.115.12,<0.116.0)",
+    "sqlalchemy (>=2.0.41,<3.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)"
+]
+
+[tool.poetry]
+
+packages = [
+  { include = "papercruncher", from = "src" }
+]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
