@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Iterable
-from papercruncher.connectors.base import BaseConnector
-from papercruncher.models.models import Paper
+from papercruncher import BaseConnector
+from papercruncher import Paper
 
 
 class MockConnector(BaseConnector):
