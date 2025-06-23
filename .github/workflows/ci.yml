@@ -8,11 +8,11 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.12
-      - run: pip install poetry
-      - run: poetry install --with dev
+      - name: Install Poetry
+        run: pip install poetry
+      - name: Install dependencies (including dev)
+        run: poetry install --with dev
       - name: Lint
         run: poetry run flake8 src
-      - name: Add src to PYTHONPATH
-        run: echo "PYTHONPATH=${{ github.workspace }}/src" >> $GITHUB_ENV
       - name: Run tests with coverage
-        run: poetry run pytest --disable-warnings --maxfail=1 --cov=papercruncher
+        run: poetry run pytest --cov=papercruncher
