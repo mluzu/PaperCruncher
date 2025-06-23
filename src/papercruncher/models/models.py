@@ -12,4 +12,3 @@ class Paper(Base):
     authors   = Column(String, nullable=True)
     published = Column(DateTime, default=datetime.utcnow)
 
-__all__ = ["Base", "Paper"]
