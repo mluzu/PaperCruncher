@@ -7,7 +7,7 @@ from papercruncher.models.models import Paper
 class MockConnector(BaseConnector):
 
     def fetch(self, query: str, max_results: int) -> Iterable[Paper]:
-        papers = []
+        papers=[]
         for i in range(max_results):
             papers.append(
                 Paper(

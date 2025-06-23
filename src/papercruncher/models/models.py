@@ -13,4 +13,3 @@ class Paper(Base):
     summary   = Column(String, nullable=False)
     authors   = Column(String, nullable=True)
     published = Column(DateTime, default=datetime.utcnow)
-    
