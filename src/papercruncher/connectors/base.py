@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict, Iterable
 from papercruncher.connectors.query import QuerySpec
-from papercruncher.models import Paper
 
 
 PaperData = Dict[str, Any]

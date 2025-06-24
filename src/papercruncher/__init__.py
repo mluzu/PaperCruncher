@@ -8,4 +8,3 @@ __all__ = [
     "BaseConnector", "ArxivConnector",
     "SemanticScholarConnector", "BaseModel", "Paper", "QuerySpec"
 ]
-
