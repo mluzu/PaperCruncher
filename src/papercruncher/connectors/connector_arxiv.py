@@ -4,7 +4,6 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 from papercruncher.connectors.query import QuerySpec
 from papercruncher.connectors.base import BaseConnector, PaperData
-from papercruncher.models import Paper
 
 
 class ArxivConnector(BaseConnector):
