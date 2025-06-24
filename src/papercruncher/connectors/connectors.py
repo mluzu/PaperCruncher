@@ -1,9 +1,7 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
 from typing import Any, Dict, Iterable
-from typing import Any, Dict, Iterable
 import xml.etree.ElementTree as ET
-
 import requests
 from papercruncher.connectors.query import QuerySpec
 
