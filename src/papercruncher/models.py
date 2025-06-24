@@ -3,10 +3,10 @@ from sqlalchemy.orm import declarative_base
 from datetime import datetime
 
 
-Base = declarative_base()
+BaseModel = declarative_base()
 
 
-class Paper(Base):
+class Paper(BaseModel):
     __tablename__ = 'papers'
     id = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(String, nullable=False, unique=True)
