@@ -3,18 +3,17 @@ from typing import Any, Dict, Iterable
 from papercruncher import BaseConnector
 from papercruncher import Paper
 from papercruncher import QuerySpec
-from papercruncher.connectors.base import PaperData
 
 
 class MockConnector(BaseConnector):
     def build_query_params(self, spec: QuerySpec) -> Dict[str, Any]:
-        return spec.dict()
+        return spec.model_dump()
 
     def call_api(self, params: Dict[str, Any]) -> Any:
         # Mock no hace llamada externa; retorna los mismos 
         return params
 
-    def parse_response(self, raw: Any) -> Iterable[PaperData]:
+    def parse_response(self, raw: Any):
         per_page = raw.get("per_page", 1)
         for i in range(per_page):
             yield {
