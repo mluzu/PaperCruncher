@@ -9,8 +9,8 @@ PaperData = Dict[str, Any]
 
 class BaseConnector(ABC):
     """
-    Interfaz de conector genérico para fuentes de papers.
-    Define el flujo template method para fetch:
+    Connector interface.
+    Fetch flow steps:
       1. build_query_params
       2. call_api
       3. parse_response
@@ -18,22 +18,22 @@ class BaseConnector(ABC):
 
     @abstractmethod
     def build_query_params(self, spec: QuerySpec) -> Dict[str, Any]:
-        """Construye los parámetros de consulta HTTP a partir de QuerySpec."""
+        """Builds query parameters from QuerySpec."""
         ...
 
     @abstractmethod
     def call_api(self, params: Dict[str, Any]) -> Any:
-        """Ejecuta la llamada HTTP y devuelve la respuesta cruda (JSON, XML, etc.)."""
+        """Performs the API call (JSON, XML, etc.)."""
         ...
 
     @abstractmethod
     def parse_response(self, raw: Any) -> Iterable[PaperData]:
-        """Parsea la respuesta cruda en un iterable de diccionarios intermedios."""
+        """Parses the response."""
         ...
 
     def fetch(self, spec: QuerySpec) -> Iterable[PaperData]:
         """
-        Método template: orquesta la extracción desde la fuente.
+        Sequence query steps
         """
         params = self.build_query_params(spec)
         raw = self.call_api(params)
