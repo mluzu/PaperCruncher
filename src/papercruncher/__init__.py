@@ -6,6 +6,6 @@ from .connectors.connector_semantic_scholar import SemanticScholarConnector
 
 __all__ = [
     "BaseConnector", "ArxivConnector",
-    "SemanticScholarConnector", "BaseModel", "Paper"
+    "SemanticScholarConnector", "BaseModel", "Paper", "QuerySpec"
 ]
 
